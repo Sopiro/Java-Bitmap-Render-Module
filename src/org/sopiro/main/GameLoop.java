@@ -1,15 +1,18 @@
 package org.sopiro.main;
 
+import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameLoop
 {
+    private Input input;
     private Random r = new Random();
 
     private int time;
 
-    public GameLoop()
+    public GameLoop(Input input)
     {
+        this.input = input;
     }
 
     public boolean update()
@@ -21,7 +24,8 @@ public class GameLoop
 
     public void render(Bitmap screen)
     {
-//        screen.clear(0xffffff);
+        if (input.keyPressed(KeyEvent.VK_SPACE))
+            screen.clear(0xffffff);
 
         int r = 50;
 

@@ -40,7 +40,7 @@ public class Main extends Canvas implements Runnable
         image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         pixels = ((DataBufferInt) (image.getRaster().getDataBuffer())).getData();
 
-        gameLoop = new GameLoop();
+        gameLoop = new GameLoop(input);
     }
 
     private void start()
